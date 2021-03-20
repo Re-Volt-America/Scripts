@@ -6,7 +6,6 @@ readonly ASSETS_URL=https://distribute.re-volt.io/packs/rvgl_assets.zip
 readonly SOUNDTRACK_URL=https://distribute.re-volt.io/packs/soundtrack.zip
 readonly DREAMCAST_PACK_URL=https://distribute.re-volt.io/packs/rvgl_dcpack.zip
 readonly RVA_PACK=https://github.com/Re-Volt-America/RVA/releases/download/1.0/RVA.tar
-readonly DESKTOP_FILE_URL=https://gist.githubusercontent.com/BGMP/d84758bc8325afb6732d100118d95f77/raw/7221f68de9ce6d6987f231375b1f99371591fe47/Re-Volt.desktop
 readonly DESKTOP_LOGO_URL=https://user-images.githubusercontent.com/5833446/75056793-fb5b7c00-54d7-11ea-9247-9a5bcd8567bb.png
 
 mkdir Re-Volt && cd Re-Volt
@@ -35,7 +34,6 @@ wget $ASSETS_URL
 wget $SOUNDTRACK_URL
 wget $DREAMCAST_PACK_URL
 wget $RVA_PACK
-wget $DESKTOP_FILE_URL
 wget $DESKTOP_LOGO_URL
 
 unzip -o game_files.zip
