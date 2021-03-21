@@ -74,7 +74,7 @@ Version=1.0
 Type=Application
 Terminal=false
 Icon=$INSTALL_PATH/bolt.png
-Exec=$INSTALL_PATH/rvgl
+Exec=$INSTALL_PATH/rvgl -window
 Name=Re-Volt
 EOF2
 
