@@ -10,10 +10,11 @@ readonly DESKTOP_LOGO_URL=https://user-images.githubusercontent.com/5833446/7505
 
 mkdir Re-Volt && cd Re-Volt
 readonly INSTALL_PATH=$(pwd)
+readonly DESKTOP_PATH=$(xdg-user-dir DESKTOP)
 
 echo Installing Re-Volt...
 
-echo Installing required packages...
+echo Installing required libraries...
 sudo apt install libsdl2-2.0-0 libsdl2-image-2.0-0
 sudo apt install libopenal1 libenet7 libunistring2
 sudo apt install libjpeg8 libpng16-16 libtiff5 libwebp6
@@ -44,7 +45,15 @@ unzip -o rvgl_dcpack.zip
 tar -xvf RVA.tar
 mv 75056793-fb5b7c00-54d7-11ea-9247-9a5bcd8567bb.png bolt.png
 
-cd ~/Desktop
+rm game_files.zip
+rm soundtrack.zip
+rm rvgl_assets.zip
+rm rvgl_linux.zip
+rm rvgl_dcpack.zip
+
+sudo chmod -R 777 $INSTALL_PATH
+
+cd $DESKTOP_PATH
 
 cat > Re-Volt.desktop << EOF1
 [Desktop Entry]
