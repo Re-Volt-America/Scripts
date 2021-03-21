@@ -26,13 +26,13 @@ sudo apt install libjpeg8 libpng16-16 libtiff5 libwebp6
 sudo apt install libvorbisfile3 libflac8 libmpg123-0 libfluidsynth1
 
 echo Verifying wget package...
-sudo apt-get install wget
+sudo apt install wget
 
 echo Verifying unzip package...
-sudo apt-get install unzip
+sudo apt install unzip
 
 echo Verifying git package...
-sudo apt-get install git
+sudo apt install git
 
 wget $GAMEFILES_URL
 wget $RVGL_LINUX_URL
