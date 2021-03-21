@@ -51,7 +51,6 @@ rm rvgl_assets.zip
 rm rvgl_linux.zip
 rm rvgl_dcpack.zip
 
-sudo chmod -R 777 $INSTALL_PATH
 chmod +x $INSTALL_PATH/rvgl
 chmod +x $INSTALL_PATH/rvgl.32
 chmod +x $INSTALL_PATH/rvgl.64
