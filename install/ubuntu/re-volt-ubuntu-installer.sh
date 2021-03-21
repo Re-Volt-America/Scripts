@@ -5,7 +5,7 @@ readonly RVGL_LINUX_URL=https://distribute.re-volt.io/packs/rvgl_linux.zip
 readonly ASSETS_URL=https://distribute.re-volt.io/packs/rvgl_assets.zip
 readonly SOUNDTRACK_URL=https://distribute.re-volt.io/packs/soundtrack.zip
 readonly DREAMCAST_PACK_URL=https://distribute.re-volt.io/packs/rvgl_dcpack.zip
-readonly RVA_PACK_URL=https://github.com/Re-Volt-America/RVA/releases/download/1.0/RVA.tar
+readonly RVA_PACK_GIT=git@github.com:Re-Volt-America/RVA.git
 readonly DESKTOP_LOGO_URL=https://user-images.githubusercontent.com/5833446/75056793-fb5b7c00-54d7-11ea-9247-9a5bcd8567bb.png
 
 if [ ! -d Re-Volt ]
@@ -39,7 +39,6 @@ wget $RVGL_LINUX_URL
 wget $ASSETS_URL
 wget $SOUNDTRACK_URL
 wget $DREAMCAST_PACK_URL
-wget $RVA_PACK_URL
 wget $DESKTOP_LOGO_URL
 
 unzip -o game_files.zip
@@ -48,15 +47,14 @@ unzip -o rvgl_assets.zip
 unzip -o rvgl_linux.zip
 unzip -o rvgl_dcpack.zip
 
-mkdir RVA
-tar -xvf RVA.tar -C RVA
+git clone $RVA_PACK_GIT
 mv RVA packs
 
-cat > packs/default.txt << EOF1
+cat > packs/default.txt << EOF
 default
 RVA
 local *
-EOF1
+EOF
 
 mv 75056793-fb5b7c00-54d7-11ea-9247-9a5bcd8567bb.png bolt.png
 
@@ -73,7 +71,7 @@ chmod +x $INSTALL_PATH/rvgl.64
 
 cd $DESKTOP_PATH
 
-cat > Re-Volt.desktop << EOF2
+cat > Re-Volt.desktop << EOF
 [Desktop Entry]
 Version=1.0
 Type=Application
@@ -81,7 +79,7 @@ Terminal=false
 Icon=$INSTALL_PATH/bolt.png
 Exec=$INSTALL_PATH/rvgl -window
 Name=Re-Volt
-EOF2
+EOF
 
 gio set Re-Volt.desktop metadata::trusted yes
 chmod +x Re-Volt.desktop
