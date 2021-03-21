@@ -42,7 +42,17 @@ unzip -o soundtrack.zip
 unzip -o rvgl_assets.zip
 unzip -o rvgl_linux.zip
 unzip -o rvgl_dcpack.zip
-tar -xvf RVA.tar
+
+mkdir RVA
+tar -xvf RVA.tar -C RVA
+mv RVA packs
+
+cat > packs/default.txt << EOF1
+default
+RVA
+local *
+EOF1
+
 mv 75056793-fb5b7c00-54d7-11ea-9247-9a5bcd8567bb.png bolt.png
 
 rm game_files.zip
@@ -50,6 +60,7 @@ rm soundtrack.zip
 rm rvgl_assets.zip
 rm rvgl_linux.zip
 rm rvgl_dcpack.zip
+rm RVA.tar
 
 chmod +x $INSTALL_PATH/rvgl
 chmod +x $INSTALL_PATH/rvgl.32
@@ -57,7 +68,7 @@ chmod +x $INSTALL_PATH/rvgl.64
 
 cd $DESKTOP_PATH
 
-cat > Re-Volt.desktop << EOF1
+cat > Re-Volt.desktop << EOF2
 [Desktop Entry]
 Version=1.0
 Type=Application
@@ -65,7 +76,7 @@ Terminal=false
 Icon=$INSTALL_PATH/bolt.png
 Exec=$INSTALL_PATH/rvgl
 Name=Re-Volt
-EOF1
+EOF2
 
 gio set Re-Volt.desktop metadata::trusted yes
 chmod +x Re-Volt.desktop
