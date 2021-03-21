@@ -4,5 +4,4 @@ Scripts for the Re-Volt community.
 ## Install
 Re-Volt installers for the RVA community, which install the game & the RVA pack bundled in at the same time.
 
-* [Ubuntu](https://github.com/Re-Volt-America/Scripts/blob/master/install/ubuntu/re-volt-ubuntu-installer.sh): Run this script **without** sudo, and preferably at your home directory or Desktop. It will generate a Re-Volt folder where it's executed and a shortcut to launch the game at your Desktop dir.
-  * Simply run `source <(curl -s https://raw.githubusercontent.com/Re-Volt-America/Scripts/master/install/ubuntu/re-volt-ubuntu-installer.sh)`
+* [Ubuntu](https://github.com/Re-Volt-America/Scripts/blob/master/install/ubuntu/re-volt-ubuntu-installer.sh): In order to install Re-Volt via this script, open your terminal (not being root) and copy-paste this in `source <(curl -s https://raw.githubusercontent.com/Re-Volt-America/Scripts/master/install/ubuntu/re-volt-ubuntu-installer.sh)`. Then hit enter. All done!
