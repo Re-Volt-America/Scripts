@@ -5,7 +5,7 @@ readonly RVGL_LINUX_URL=https://distribute.re-volt.io/packs/rvgl_linux.zip
 readonly ASSETS_URL=https://distribute.re-volt.io/packs/rvgl_assets.zip
 readonly SOUNDTRACK_URL=https://distribute.re-volt.io/packs/soundtrack.zip
 readonly DREAMCAST_PACK_URL=https://distribute.re-volt.io/packs/rvgl_dcpack.zip
-readonly RVA_PACK_GIT=git@github.com:Re-Volt-America/RVA.git
+readonly RVA_PACK_GIT=https://github.com/Re-Volt-America/RVA
 readonly DESKTOP_LOGO_URL=https://user-images.githubusercontent.com/5833446/75056793-fb5b7c00-54d7-11ea-9247-9a5bcd8567bb.png
 
 if [ ! -d Re-Volt ]
