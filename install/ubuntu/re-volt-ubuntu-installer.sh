@@ -8,12 +8,17 @@ readonly DREAMCAST_PACK_URL=https://distribute.re-volt.io/packs/rvgl_dcpack.zip
 readonly RVA_PACK_URL=https://github.com/Re-Volt-America/RVA/releases/download/1.0/RVA.tar
 readonly DESKTOP_LOGO_URL=https://user-images.githubusercontent.com/5833446/75056793-fb5b7c00-54d7-11ea-9247-9a5bcd8567bb.png
 
-mkdir Re-Volt && cd Re-Volt
+if [ ! -d Re-Volt ]
+then
+    mkdir ./Re-Volt
+fi
+
+cd ./Re-Volt
+
 readonly INSTALL_PATH=$(pwd)
 readonly DESKTOP_PATH=$(xdg-user-dir DESKTOP)
 
 echo Installing Re-Volt...
-
 echo Installing required libraries...
 sudo apt install libsdl2-2.0-0 libsdl2-image-2.0-0
 sudo apt install libopenal1 libenet7 libunistring2
