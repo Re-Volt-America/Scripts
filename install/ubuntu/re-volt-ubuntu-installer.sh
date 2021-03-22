@@ -68,9 +68,9 @@ sudo chown root:root $INSTALL_PATH/rvgl
 sudo chown root:root $INSTALL_PATH/rvgl.32
 sudo chown root:root $INSTALL_PATH/rvgl.64
 
-chmod a+s $INSTALL_PATH/rvgl
-chmod a+s $INSTALL_PATH/rvgl.32
-chmod a+s $INSTALL_PATH/rvgl.64
+sudo chmod a+s $INSTALL_PATH/rvgl
+sudo chmod a+s $INSTALL_PATH/rvgl.32
+sudo chmod a+s $INSTALL_PATH/rvgl.64
 
 cd $DESKTOP_PATH
 
