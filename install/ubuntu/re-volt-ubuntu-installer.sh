@@ -20,16 +20,16 @@ readonly DESKTOP_PATH=$(xdg-user-dir DESKTOP)
 
 echo Installing Re-Volt...
 echo Installing required libraries...
-sudo apt install libsdl2-2.0-0 libsdl2-image-2.0-0
-sudo apt install libopenal1 libenet7 libunistring2
-sudo apt install libjpeg8 libpng16-16 libtiff5 libwebp6
-sudo apt install libvorbisfile3 libflac8 libmpg123-0 libfluidsynth1
+sudo apt install -y libsdl2-2.0-0 libsdl2-image-2.0-0
+sudo apt install -y libopenal1 libenet7 libunistring2
+sudo apt install -y libjpeg8 libpng16-16 libtiff5 libwebp6
+sudo apt install -y libvorbisfile3 libflac8 libmpg123-0 libfluidsynth1
 
 echo Verifying wget package...
-sudo apt install wget
+sudo apt install -y wget
 
 echo Verifying unzip package...
-sudo apt install unzip
+sudo apt install -y unzip
 
 wget $GAMEFILES_URL
 wget $RVGL_LINUX_URL
@@ -64,9 +64,9 @@ rm rvgl_linux.zip
 rm rvgl_dcpack.zip
 rm RVA.tar
 
-chown root:root $INSTALL_PATH/rvgl
-chown root:root $INSTALL_PATH/rvgl.32
-chown root:root $INSTALL_PATH/rvgl.64
+sudo chown root:root $INSTALL_PATH/rvgl
+sudo chown root:root $INSTALL_PATH/rvgl.32
+sudo chown root:root $INSTALL_PATH/rvgl.64
 
 chmod a+s $INSTALL_PATH/rvgl
 chmod a+s $INSTALL_PATH/rvgl.32
@@ -87,6 +87,6 @@ EOF
 gio set Re-Volt.desktop metadata::trusted yes
 chmod +x Re-Volt.desktop
 
-echo Installation complete!
-echo A shortcut has added to your Desktop.
-echo Double-click it to launch Re-Volt.
+echo 🎉 Installation complete 🎉
+echo 🔗 A shortcut has added to your Desktop.
+echo 🖱️  Double-click it to launch Re-Volt.
