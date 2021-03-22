@@ -5,7 +5,7 @@ readonly RVGL_LINUX_URL=https://distribute.re-volt.io/packs/rvgl_linux.zip
 readonly ASSETS_URL=https://distribute.re-volt.io/packs/rvgl_assets.zip
 readonly SOUNDTRACK_URL=https://distribute.re-volt.io/packs/soundtrack.zip
 readonly DREAMCAST_PACK_URL=https://distribute.re-volt.io/packs/rvgl_dcpack.zip
-readonly RVA_PACK_GIT=https://github.com/Re-Volt-America/RVA
+readonly RVA_PACK_URL=https://github.com/Re-Volt-America/RVA/releases/download/1.0/RVA.tar
 readonly DESKTOP_LOGO_URL=https://user-images.githubusercontent.com/5833446/75056793-fb5b7c00-54d7-11ea-9247-9a5bcd8567bb.png
 
 if [ ! -d Re-Volt ]
@@ -31,15 +31,13 @@ sudo apt install wget
 echo Verifying unzip package...
 sudo apt install unzip
 
-echo Verifying git package...
-sudo apt install git
-
 wget $GAMEFILES_URL
 wget $RVGL_LINUX_URL
 wget $ASSETS_URL
 wget $SOUNDTRACK_URL
 wget $DREAMCAST_PACK_URL
 wget $DESKTOP_LOGO_URL
+wget $RVA_PACK_URL
 
 unzip -o game_files.zip
 unzip -o soundtrack.zip
@@ -47,7 +45,8 @@ unzip -o rvgl_assets.zip
 unzip -o rvgl_linux.zip
 unzip -o rvgl_dcpack.zip
 
-git clone $RVA_PACK_GIT
+mkdir RVA
+tar -xvf RVA.tar -C RVA
 mv RVA packs
 
 cat > packs/default.txt << EOF
@@ -65,9 +64,13 @@ rm rvgl_linux.zip
 rm rvgl_dcpack.zip
 rm RVA.tar
 
-chmod +x $INSTALL_PATH/rvgl
-chmod +x $INSTALL_PATH/rvgl.32
-chmod +x $INSTALL_PATH/rvgl.64
+chown root:root $INSTALL_PATH/rvgl
+chown root:root $INSTALL_PATH/rvgl.32
+chown root:root $INSTALL_PATH/rvgl.64
+
+chmod a+s $INSTALL_PATH/rvgl
+chmod a+s $INSTALL_PATH/rvgl.32
+chmod a+s $INSTALL_PATH/rvgl.64
 
 cd $DESKTOP_PATH
 
