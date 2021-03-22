@@ -87,6 +87,8 @@ EOF
 gio set Re-Volt.desktop metadata::trusted yes
 chmod +x Re-Volt.desktop
 
-echo 🎉 Installation complete 🎉
-echo 🔗 A shortcut has added to your Desktop.
-echo 🖱️  Double-click it to launch Re-Volt.
+echo
+echo ⚡ Re-Volt has been successfully installed.
+echo 🔗 A shortcut has been added to your Desktop.
+echo ✔ ️ Installation complete. Done.
+
