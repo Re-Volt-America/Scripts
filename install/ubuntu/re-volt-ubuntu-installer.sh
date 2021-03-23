@@ -45,13 +45,13 @@ unzip -o rvgl_assets.zip
 unzip -o rvgl_linux.zip
 unzip -o rvgl_dcpack.zip
 
-mkdir RVA
-tar -xvf RVA.tar -C RVA
-mv RVA packs
+mkdir rva
+tar -xvf RVA.tar -C rva
+mv rva packs
 
 cat > packs/default.txt << EOF
 default
-RVA
+rva
 local *
 EOF
 
