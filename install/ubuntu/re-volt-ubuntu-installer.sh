@@ -13,7 +13,7 @@ then
     mkdir ./Re-Volt
 fi
 
-cd ./Re-Volt
+cd ./Re-Volt || exit
 
 readonly INSTALL_PATH=$(pwd)
 readonly DESKTOP_PATH=$(xdg-user-dir DESKTOP)
@@ -64,15 +64,16 @@ rm rvgl_linux.zip
 rm rvgl_dcpack.zip
 rm RVA.tar
 
-sudo chown root:root $INSTALL_PATH/rvgl
-sudo chown root:root $INSTALL_PATH/rvgl.32
-sudo chown root:root $INSTALL_PATH/rvgl.64
+sudo chown root:root "$INSTALL_PATH"/rvgl
+sudo chown root:root "$INSTALL_PATH"/rvgl.32
+sudo chown root:root "$INSTALL_PATH"/rvgl.64
 
-sudo chmod a+s $INSTALL_PATH/rvgl
-sudo chmod a+s $INSTALL_PATH/rvgl.32
+sudo chmod a+s "$INSTALL_PATH"/rvgl
+sudo chmod a+s "$INSTALL_PATH"/rvgl.32
+# shellcheck disable=SC2086
 sudo chmod a+s $INSTALL_PATH/rvgl.64
 
-cd $DESKTOP_PATH
+cd "$DESKTOP_PATH" || exit
 
 cat > Re-Volt.desktop << EOF
 [Desktop Entry]
@@ -87,8 +88,6 @@ EOF
 gio set Re-Volt.desktop metadata::trusted yes
 chmod +x Re-Volt.desktop
 
-echo
-echo ⚡ Re-Volt has been successfully installed.
-echo 🔗 A shortcut has been added to your Desktop.
-echo ✔ ️ Installation complete. Done.
-
+echo ✔ Re-Volt has been successfully installed.
+echo ✔ A shortcut has been added to your Desktop.
+echo ✔ Done.
