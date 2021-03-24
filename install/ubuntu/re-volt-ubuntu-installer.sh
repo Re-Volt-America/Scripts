@@ -70,8 +70,7 @@ sudo chown root:root "$INSTALL_PATH"/rvgl.64
 
 sudo chmod a+s "$INSTALL_PATH"/rvgl
 sudo chmod a+s "$INSTALL_PATH"/rvgl.32
-# shellcheck disable=SC2086
-sudo chmod a+s $INSTALL_PATH/rvgl.64
+sudo chmod a+s "$INSTALL_PATH"/rvgl.64
 
 cd "$DESKTOP_PATH" || exit
 
