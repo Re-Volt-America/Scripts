@@ -46,7 +46,7 @@ unzip -o rvgl_linux.zip
 unzip -o rvgl_dcpack.zip
 
 mkdir rva
-tar -xvf RVA.tar -C rva
+unzip rva.zip -d rva
 mv rva packs
 
 cat > packs/default.txt << EOF
@@ -62,7 +62,7 @@ rm soundtrack.zip
 rm rvgl_assets.zip
 rm rvgl_linux.zip
 rm rvgl_dcpack.zip
-rm RVA.tar
+rm rva.zip
 
 sudo chown root:root "$INSTALL_PATH"/rvgl
 sudo chown root:root "$INSTALL_PATH"/rvgl.32
